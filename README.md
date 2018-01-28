@@ -38,7 +38,7 @@ ATTENTION: dans le cas où il y a eu un perte de réseau au niveau OpenWRT (WIFI
 ## Commande pour se connecter facilement via le tunnel SSH reverse
 Quand cela fonctionne bien, on peut utiliser la ligne de commande magique pour faire directement la connexion depuis le tremplin ssh (ne pas oublier le '-t' afin de pouvoir entrer le password de l'openwrt):
 
-ssh -A -t ubuntu@sdftests.epfl.ch 'ssh root@localhost -p 20221'
+**ssh -A -t ubuntu@sdftests.epfl.ch 'ssh root@localhost -p 20221'**
 
 Ne pas oublier de faire un:<br>
 **ssh-add -l<br>
