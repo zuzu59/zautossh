@@ -11,7 +11,7 @@ README en cours de rédaction (zf180128.1239)
 http://www.delafond.org/traducmanfr/man/man1/ssh.1.html
 
 # But
-Quand, pour la domotique par exemple (télé remote), on doit se créer un petit réseau bon marché, on va utiliser un petit router 3G/WIFI avec une puce Swisscom prepaid. L'offre actuelle est de 5./mois pour 250MB, ce qui est bien assez pour de la domotique. Mais quand on veut contrôler l'état du prepaid, Swisscom envoie sur le routeur 3G/WIFI un SMS de confirmation, il faut donc être sur place pour pouvoir le consulter. L'idée est donc de se connecter en remote sur le router 3G/WIFI en SSH pour pouvoir manager le petit router 3G/WIFI !
+Quand, pour la domotique par exemple (télé remote à quelques centaines de km), on doit se créer un petit réseau bon marché, on va utiliser un petit router 3G/WIFI avec une puce Swisscom prepaid. L'offre actuelle est de 5./mois pour 250MB, ce qui est bien assez pour de la domotique. Mais quand on veut contrôler l'état du prepaid, Swisscom envoie sur le routeur 3G/WIFI un SMS de confirmation, il faut donc être sur place pour pouvoir le consulter. L'idée est donc de se connecter en remote sur le router 3G/WIFI en SSH pour pouvoir manager le petit router 3G/WIFI !
 
 La problématique est de pouvoir atteindre le réseau distant derrière un router 3G/WIFI connecté via Swisscom via un tremplin SSH sur un petit routeur D-Link DIR505 avec OpenWRT.
 Le problème c'est que Swisscom, afin d'économiser les adresses IP V4, NATe ses clients sur un port, donc pas moyen d'accéder directement au routeur OpenWRT de manière standard, vu que l'on n'a pas accès à la configuration de leur NAT :-(
