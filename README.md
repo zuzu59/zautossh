@@ -12,8 +12,8 @@ Donc la doc est à adapter en fonction des circonstances du terrain !
 http://www.delafond.org/traducmanfr/man/man1/ssh.1.html
 
 # But
-Quand, pour la domotique par exemple (télé remote à quelques centaines de km), on doit se créer un petit réseau bon marché, on va utiliser un petit router 3G/WIFI avec une puce Swisscom prepaid. L'offre actuelle est de 5./mois pour 250MB, ce qui est bien assez pour de la domotique. 
-Mais quand on veut contrôler l'état du prepaid, Swisscom envoie sur le routeur 3G/WIFI un SMS de confirmation, il faut donc être sur place pour pouvoir le consulter. 
+Quand, pour la domotique par exemple (télé remote à quelques centaines de km), on doit se créer un petit réseau bon marché, on va utiliser un petit router 3G/WIFI avec une puce Swisscom prepaid. L'offre actuelle est de 5./mois pour 250MB, ce qui est bien assez pour de la domotique.<br>
+Mais quand on veut contrôler l'état du prepaid, Swisscom envoie sur le routeur 3G/WIFI un SMS de confirmation, il faut donc être sur place pour pouvoir le consulter.<br>
 L'idée est donc de se connecter en remote sur le router 3G/WIFI en SSH pour pouvoir manager le petit router 3G/WIFI !
 
 La problématique est de pouvoir atteindre le réseau distant derrière un router 3G/WIFI connecté via Swisscom via un tremplin SSH sur un petit routeur D-Link DIR505 avec OpenWRT.
