@@ -27,11 +27,11 @@ Bon après vraiment pas mal d'heures passées dessus la commande autossh de open
 
 Aussi, bien veiller à mettre un '-y -y' dans la commande ssh de la configuration de autossh, c'est ce qu'il permet de bypasser la vérification de l'host connu, autrement cela ne fonctionne pas.
 
-Comme ce n'était pas utilisable sur le terrain (machine se trouvant à 150km), j'ai récrit un autossh au moyen d'un petit script bash. Comme je lance les tunnels SSH en backgroud avec &, je suis en tout temps maître de pouvoir contrôler le bon fonctionnement du tunnel SSH reverse (pas de blocage). Pour vérifier la bonne connexion, depuis OpenWRT, je fais une boucle SSH pour créer un fichier dans /tmp (connection ssh serveur distant, retour ssh sur OpenWRT), cela me permet vraiment de pouvoir vérifier l'état du tunnel et de le recréer au besoin si jamais.
+Comme ce n'était pas utilisable sur le terrain (machine se trouvant à 150km), j'ai récrit un ** au moyen d'un petit script bash (en fait ash). Comme je lance les tunnels SSH en backgroud avec &, je suis en tout temps maître de pouvoir contrôler le bon fonctionnement du tunnel SSH reverse (pas de blocage). Pour vérifier la bonne connexion, depuis OpenWRT, je fais une boucle SSH pour créer un fichier dans /tmp (connection ssh serveur distant, retour ssh sur OpenWRT), cela me permet vraiment de pouvoir vérifier l'état du tunnel et de le recréer au besoin si jamais.
 
-ATTENTION: dans le cas où il y a eu un perte de réseau au niveau OpenWRT (WIFI) l'ancien tunnel SSH reverse créé sur le tremplin distant est toujours là mais plus actif, il faudra donc se connecter sur le serveur tremplin SSH pour le tuer avec:
-sudo netstat -natp |grep LIST (pour trouver le bon pid)
-sudo kill -9 pid (le pid du tunnel reverse)
+ATTENTION: dans le cas où il y a eu un perte de réseau au niveau OpenWRT (WIFI) l'ancien tunnel SSH reverse créé sur le tremplin distant est toujours là mais plus actif, il faudra donc se connecter sur le serveur tremplin SSH pour le tuer avec:<br>
+**sudo netstat -natp |grep LIST** (pour trouver le bon pid)<br>
+**sudo kill -9 pid** (le pid du tunnel reverse)<br>
 
 
 
@@ -40,17 +40,17 @@ Quand cela fonctionne bien, on peut utiliser la ligne de commande magique pour f
 
 ssh -A -t ubuntu@sdftests.epfl.ch 'ssh root@localhost -p 20221'
 
-Ne pas oublier de faire un:
-ssh-add -l
-ssh-add
-ssh-add -l
+Ne pas oublier de faire un:<br>
+**ssh-add -l<br>
+ssh-add<br>
+ssh-add -l**<br>
 
-Pour ajouter sa clef SSH à l'agent ssh forward qui va envoyer automatiquement la clef ssh sur l'OpenWRT afin de se connecter sans password !
+Pour ajouter sa clef SSH à l'agent *ssh forward* qui va envoyer automatiquement la clef ssh sur l'OpenWRT afin de se connecter sans password !
 
 
 # pour créer le tunnel SSH reverse
-Pour créer le tunnel SSH reverse, il suffit simplement de lancer au moment du boot le script:
-zautossh.sh
+Pour créer le tunnel SSH reverse, il suffit simplement de lancer au moment du boot le script:<br>
+**zautossh.sh**
 
 
 
