@@ -1,6 +1,7 @@
 #!/bin/bash
 #petit script pour lancer un ssh reverse mais surtout aussi de verifier s'il fonctionne, si non il le relance, version pour Ubuntu
-#zf180128.0048, zf190730.1944
+# ATTENTION, il relance aussi le tunnel forward pour le mysql du MsL
+#zf180128.0048, zf191025.1433
 
 # pour se connecter: ssh -A -t ubuntu@www.zuzutest.ml 'ssh ubuntu@localhost -p 20221'
 
@@ -15,6 +16,8 @@ while true ; do
 #        ssh -i /root/.ssh/id_dropbear -y -y -N -T -R 20221:localhost:22 ubuntu@www.zuzutest.ml 2>/dev/null &
 #        ssh -i /root/.ssh/id_dropbear -y -y -N -T -R 20221:localhost:22 ubuntu@www.zuzutest.ml &
         ssh -y -y -N -T -R 20221:localhost:22 ubuntu@www.zuzutest.ml &
+        sleep 3
+        /home/ubuntu/zautossh/msl_mysql.sh
         sleep 6
         echo "on etablit le tunnel ssh normal pour tests"
 #        ssh -N -T -L 21221:localhost:20221 ubuntu@www.zuzutest.ml 2>/dev/null &
