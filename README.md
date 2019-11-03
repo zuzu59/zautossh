@@ -57,3 +57,6 @@ Pour créer le tunnel SSH reverse, il suffit simplement de lancer au moment du b
 
 
 
+crontab -e
+@reboot /home/ubuntu/zautossh/zautossh_opiz1.sh
+
