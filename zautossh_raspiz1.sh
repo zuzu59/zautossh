@@ -1,7 +1,7 @@
 #!/bin/bash
 #petit script pour lancer un ssh reverse mais surtout aussi de verifier s'il fonctionne, si non il le relance, version pour Ubuntu
 # ATTENTION, il relance aussi le tunnel forward pour le mysql du MsL
-#zf180128.0048, zf200416.2353
+#zf180128.0048, zf200417.0052
 
 # il faut copier les clefs ssh
 ## ssh-copy-id ubuntu@www.zuzu-test.ml
@@ -45,7 +45,7 @@ while true ; do
 		rm -f /tmp/toto
 #		ssh -y -y root@localhost -p $ZPORTB  2>/dev/null touch /tmp/toto &
 		ssh -y -y $ZUSER_LOCAL@localhost -p $ZPORTB touch /tmp/toto &
-		sleep 6
+		sleep 12
 		ZTEST=`ls /tmp/toto 2>/dev/null`
 		ZTEST=$ZTEST"z"
 		if [ $ZTEST = "/tmp/toto""z" ]
