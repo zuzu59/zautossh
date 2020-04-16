@@ -14,7 +14,7 @@
 # pour se connecter: ssh -A -t ubuntu@www.zuzu-test.ml 'ssh pi@localhost -p 20224'
 
 
-ZTIMELOOP=30
+ZTIMELOOP=10
 ZTREMPLIN_SSH=ubuntu@www.zuzu-test.ml
 ZPORT=20224
 ZPORTB=21224
@@ -29,15 +29,15 @@ while true ; do
 #        ssh -i /root/.ssh/id_dropbear -y -y -N -T -R $ZPORT:localhost:22 $ZTREMPLIN_SSH 2>/dev/null &
 #        ssh -i /root/.ssh/id_dropbear -y -y -N -T -R $ZPORT:localhost:22 $ZTREMPLIN_SSH &
         ssh -y -y -N -T -R $ZPORT:localhost:22 $ZTREMPLIN_SSH &
-        sleep 3
+        sleep 10
 
 #        /home/ubuntu/zautossh/msl_mysql.sh
+#        sleep 10
 
-        sleep 6
         echo "on etablit le tunnel ssh normal pour tests"
 #        ssh -N -T -L $ZPORTB:localhost:$ZPORT $ZTREMPLIN_SSH 2>/dev/null &
         ssh -y -y -N -T -L $ZPORTB:localhost:$ZPORT $ZTREMPLIN_SSH &
-	sleep 6
+	    sleep 10
         echo "les tunnels sont crees"
 
 	while true ; do
@@ -45,7 +45,7 @@ while true ; do
 		rm -f /tmp/toto
 #		ssh -y -y root@localhost -p $ZPORTB  2>/dev/null touch /tmp/toto &
 		ssh -y -y $ZUSER_LOCAL@localhost -p $ZPORTB touch /tmp/toto &
-		sleep 12
+		sleep 30
 		ZTEST=`ls /tmp/toto 2>/dev/null`
 		ZTEST=$ZTEST"z"
 		if [ $ZTEST = "/tmp/toto""z" ]
