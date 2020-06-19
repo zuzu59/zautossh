@@ -1,17 +1,16 @@
 #!/bin/bash
 # Petit script pour lancer un ssh reverse mais surtout aussi de verifier s'il fonctionne, si non il le relance, version pour Ubuntu
-# ATTENTION, il relance aussi le tunnel forward pour le mysql du MsL
-#zf180128.0048, zf200619.1025
+#zf180128.0048, zf200619.1022
 
 # pour se connecter: ssh -A -t ubuntu@www.zuzu-test.ml 'ssh ubuntu@localhost -p $ZPORT'
 # crontab -e
-# @reboot  sleep 30 && /home/pi/.raspiz.sh
+# @reboot  sleep 30 && /home/ubuntu/zautossh/zautossh_opiz_bolo.sh
 
 
-ZTIMELOOP=300
-ZTREMPLIN_SSH=proxyjump@ssh.proxyjump.ml
-ZPORT=2022x
-ZPORTB=2122x
+ZTIMELOOP=900
+ZTREMPLIN_SSH=ubuntu@www.zuzu-test.ml
+ZPORT=20223
+ZPORTB=21223
 
 while true ; do
     echo "on kill tous les ssh"
