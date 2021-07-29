@@ -1,7 +1,7 @@
 #!/bin/bash
-#petit script pour lancer un ssh reverse mais surtout aussi de verifier s'il fonctionne, si non il le relance, version pour Ubuntu
-# ATTENTION, il relance aussi le tunnel forward pour le mysql du MsL
-#zf180128.0048, zf200413.2039, zf210729.1050
+# petit script pour lancer un ssh reverse mais surtout aussi de verifier s'il fonctionne, si non il le relance, version pour Ubuntu Home5
+# 
+# zf180128.0048, zf200413.2039, zf210729.2026
 
 #- ssh-keygen -t ed25519 -N "" -f ~/.ssh/id_ed25519 , pour créer très facilement un certificat SSH
 #- ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa , ancienne méthode, pour créer très facilement un certificat SSH

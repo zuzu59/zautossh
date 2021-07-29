@@ -1,7 +1,7 @@
 # zautossh
 Petit script pour gérer les reconnexions automatiques d'un tunnel SSH reverse
 
-README en cours de rédaction (zf180128.1239)
+README en cours de rédaction (zf180128.1239, zf210729.1053)
 
 A l'origine c'est pour faire du SSH reverse sur un petit router D-Link DIR505 avec OpenWRT derrière un router 3G/WIFI.
 Donc la doc est à adapter en fonction des circonstances du terrain !
@@ -33,6 +33,12 @@ ATTENTION: dans le cas où il y a eu un perte de réseau au niveau OpenWRT (WIFI
 
 **sudo netstat -natp |grep LIST** (pour trouver le bon pid)<br>
 **sudo kill -9 pid** (le pid du tunnel reverse)<br>
+
+
+## Créer en envoyer un certificat ssh
+- ssh-keygen -t ed25519 -N "" -f ~/.ssh/id_ed25519 , pour créer très facilement un certificat SSH
+- ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa , ancienne méthode, pour créer très facilement un certificat SSH
+- ssh-copy-id -i user@ssh_server , copie sa clef ssh sur un serveur distant
 
 
 
